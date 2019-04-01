@@ -48,4 +48,4 @@ if(removeIdade($pessoas,"Joãozinho")){
 }else{
 	echo "O valor nao existe no Array";
 }
-echo "<hr></pre>";
+echo "<hr>Joãozinho foi retirado do array</pre>";
