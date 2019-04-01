@@ -1,0 +1,17 @@
+<?php
+$nome = "Silvio";
+$funcionario =[
+    'nome'=>'Pedro',
+    'setor'=>'Recursos Humanos',
+    'admisao'=>'2000',
+    'expediente'=>'Note'
+];
+extract($funcionario,EXTR_PREFIX_ALL,'extra1');
+echo "<hr>".$nome." sem o prefixo acesssa a var de fora do array mesmo extraido somente o array<br>";
+echo $extra1_nome." com o prefixo acesso somente dentro do array<br>";
+echo $extra1_setor."<br>";
+echo $extra1_admisao."<br>";
+echo $extra1_expediente."<hr>";
+
+//extract($funcionario,EXTR_SKIPT)//nao atribui a segunda variavel a none
+//extract($funcionario,EXTR_PREFIX_ALL,'extra1') determina o prefixo no inicio d ecada variavel
