@@ -1,0 +1,35 @@
+<?php
+
+
+function teste1(){
+	echo "Teste funçoes dinamicas 1<br><hr>";
+}
+
+function teste2(){
+	echo "Teste funçoes dinamicas 2<br>";
+	$x=0;
+	while($x<=10){
+		echo "loop: ".$x."...<br>";
+		$x++;
+	}
+}
+
+$fun_A = teste1();
+$fun_B = teste2();
+
+//echo $fun_A;
+//echo $fun_B;
+
+echo "<hr>Com paramentro<hr>";
+ function teste3($parm){
+ 	echo "Teste com parametro:".$parm;
+ }
+$fun_C = 'teste3';
+$fun_C('Valor parametro');
+echo "<br><hr>";
+function teste4($parm2){
+	echo "parametro: ".$parm2;
+}
+$func_D='teste4';
+$func_D('2');
+
