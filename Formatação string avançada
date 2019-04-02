@@ -1,0 +1,78 @@
+<?php
+
+echo "<hr>";
+$erro=[
+    'tipo'=>'Email',
+    'codigo'=>'01',
+    'descricao'=>'O remetente nao foi informado'
+];
+echo "Tipo: ". $erro["tipo"]." Código: ". $erro["codigo"]. ". Descrição: ".$erro["descricao"];
+echo "<br><hr>";
+/*Usando a funçao sprintf()
+retorna uma string formatada
+ Ela por si só não imprime o 
+ resultado na tela. Entretanto, 
+ existe a função printf() que 
+ não apenas formata, mas faz a 
+ função de print (imprimir na tela):
+*/
+ $usuario = [
+    'nome'=>'João',
+    'sobrenome'=>'Silva',
+    'idade'=>'65',
+    'email'=>'teste@teste'
+ ];
+ $str_formt=sprintf("Sr: %s  %s  tem a idade de %s anos email de contato %s",$usuario["nome"],$usuario["sobrenome"],$usuario["idade"],$usuario["email"]);
+ echo "Funçao sprintf<br>";
+ echo $str_formt."<hr>";
+ /*O segredo está nos especificadores 
+ de formato do tipo "%s", que tratam 
+ os argumentos como sendo strings.
+A função sprintf() retorna uma string 
+formatada. Ela por si só não imprime o 
+resultado na tela. Entretanto, existe a f
+unção printf() que não apenas formata, 
+mas faz a função de print (imprimir na tela):*/
+echo "Funçao printf<br>";
+printf("Sr: %s %s tem a idade de %s anos email de contato %s",$usuario["nome"],$usuario["sobrenome"],$usuario["idade"],$usuario["email"]);
+ echo"<hr>";
+ /*Um erro comum é usar o símbolo de
+  percentagem (%) sem a intenção que 
+  ele seja um especificador. para 
+  solucionar este erro basta escṕar 
+  cm mais um %*/
+  $user=[
+      'nome'=>'Pedro',
+      'sobrenome'=>"Aparecido",
+      'idade'=>'28',
+      'email'=>'pedro@teste.com'
+  ];
+  $formt = vsprintf("Nome: %s Sobre Nome: %s Idade: %s Email: %s .Perfil concluido: 50%%", $user);
+  echo $formt."<hr>";
+ 
+ echo "<pre>
+ Os tipos possíveis são:
+
+% - Um caractere porcento. Não é requerido nenhum argumento.
+b - O argumento é tratado como um inteiro, e mostrado como um binário.
+c - O argumento é tratado como um inteiro, e mostrado como o caractere ASCII correspondente.
+d - O argumento é tratado como um inteiro, e mostrado como um número decimal com sinal.
+e - O argumento é tratado como notação científica (e.g. 1.2e+2). O especificador de precisão indica o número de dígitos depois do ponto decimal (PHP 5.2.1 ou maior).
+u - O argumento é tratado como um inteiro, e mostrado como um número decimal sem sinal.
+f - O argumento é tratado como um float, e mostrado como um número de ponto flutuante (do local configurado).
+F - O argumento é tratado como um float, e mostrado como um número de ponto flutuante (não usa as configurações do local informado).
+o - O argumento é tratado como um inteiro, e mostrado como um número octal.
+s - O argumento é tratado e mostrado como uma string.
+x - O argumento é tratado como um inteiro, e mostrado como um número hexadecimal (com as letras minúsculas).
+X - O argumento é tratado como um inteiro, e mostrado como um número hexadecimal (com as letras maiúsculas).*/</pre><hr>";
+$valor1=4295;
+$valor2=98.25;
+$valor3= -4395;
+$caractere = 67;//decimal 67 na tabela ansi equivale a letra C
+
+printf('Representaçao binaria: %b <br>',$valor1);
+printf('Caractere 67 tabl ansi: %c <br>',$caractere);
+printf('Notaçao Cientifuica: %e <br>',$valor1);
+printf('Inteiro do valor Truncado: %d <br>',$valor2);
+printf('Força o valor inteiro a ter o sinal "+": %+d <br>',$valor1);
+printf('Forca o sinal "-": %-d <br>',$valor3);
