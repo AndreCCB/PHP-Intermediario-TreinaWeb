@@ -1,0 +1,38 @@
+<?php
+
+$dados=<<<'HTML'
+Teste nowdoc Treinaweb o interpretador nao entedera $isso como sendo uma variavel
+<br><br>
+<b>Teste</b>
+HTML;
+
+echo $dados."<hr>";
+
+$dados=<<<'TEXT'
+Teste nowdoc .... teste teste teste teste teste
+<br><br>
+<b>Nowdoc</b>
+TEXT;
+
+echo $dados;
+echo "<hr>";
+
+$dado=<<<'XML'
+  <teste>
+  	<nome>teste newdoc</nome>
+  </teste>
+  <teste>
+  	<nome>mais um teste</nome>
+  </teste>
+XML;
+echo $dados;
+$isso='(interpretou)';
+
+$dados=<<<HTML
+o interpretador entendera $isso como sendo uma variavel.
+<b>teste Heredoc</b>
+HTML;
+echo "<br>";
+echo $dados."<br>";
+echo "A variavel $isso pode ser colocada emtre chaves para melhor compreençao<br>";
+echo "<hr>";
