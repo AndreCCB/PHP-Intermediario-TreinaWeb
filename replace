@@ -1,0 +1,25 @@
+<?php
+$string = 'Os cachorros sao engraçados';
+$expresao = '/cachorros/';
+$substituir= '<br>gatos</br>';
+
+echo preg_replace($expresao, $substituir, $string);
+
+echo "<hr>";
+
+$hora = '12:30';
+$expresao= '/^([\d]{2}):([\d]{2})$/';
+$substituir = "<span style='color:blue'>$1</span>:<span style='color:green'>$2</span>";
+
+echo preg_replace($expresao, $substituir, $hora);
+
+echo "<hr>";
+
+//contador de subistituiçoes
+$string = 'dog dog bird fish fish fish';
+$expresao='/dog/';
+$substituir= "cat";
+
+echo preg_replace($expresao, $substituir, $string, 4, $contador);
+
+echo "<br>Numero de substituiçoes realizadas: {$contador}";
