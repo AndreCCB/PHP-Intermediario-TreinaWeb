@@ -1,0 +1,35 @@
+<?php
+$nome =[
+    '_Ana','Pedro','_Carla','Marcos_'
+];
+echo "<pre>";
+// #_$# para buscar _no final
+$filtro=preg_grep('#^_#',$nome);
+$filtro2=preg_grep('#_$#',$nome);
+var_dump($filtro);
+var_dump($filtro2);
+echo "<hr>";
+//preg_match_all para mais de uma ocorrencia
+preg_match('#../../....#','11/11/1111',$match2 );
+preg_match_all('#../../....#','11/11/1111 22/22/2222',$match );
+var_dump($match2);
+var_dump($match);
+echo "<hr>";
+
+$texto = <<<TEXT
+nome: Carlos<br>
+data_nac:11/12/1988<br>
+data_cad:20/02/2000<br>
+TEXT;
+echo $texto;
+//tudo a frente de 2 ponto: e tudo atraz de : no heredoc TEXT
+preg_match('#(?P<chave>.+): (?P<valor>.+) #', $texto, $match);
+//var_dump($match);
+//trocar para formato iso aceito pelo banco de dados
+$texto_novo=preg_replace_callback('#(\d{2})/(\d{2})/(\d+)#', function($match){
+	//var_dump($match);
+	return "{$match[3]}-{$match[2]}-{$match[1]} 00:00:00";
+} ,$texto );
+echo $texto_novo;
+
+echo "</pre>";
