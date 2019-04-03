@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Validaçao Formulario</title>
+</head>
+<body>
+<fieldset size="300">
+	<legend>Cadastro</legend>
+	<form action="valida_cadastro.php" method="POST">
+        Nome: <input type="text" size="30" name="nome"><br>
+        Email: <input type="text" size="30" name="email"><br>
+        Twitter: <input type="text" size="30" name="twitter"><br>
+        <button>Enviar</button>
+	</form>
+</fieldset>
+</body>
+</html>
+<?php
+$nome = trim($_POST['nome']);
+$email = trim($_POST['email']);
+$twiter =strtolower(trim($_POST['twitter']));
+
+if(!preg_match('/^[^0-9]{2,80}$/i',$nome)){
+	exit('Formato incorreto');
+}
+$emailregex=<<<REGEXEMAIL
+/^[^0-9][a-z0-9_]+([.][a-z0-9_]+)*[@][a-z0-9-_]+([.][a-z0-9]{2,3})*[.][a-z]{2,3}$/
+REGEXEMAIL;
+
+if(!preg_match($emailregex, $email)){
+	exit('Email invalido');
+}
+if(!preg_match('/^@[a-z_]{1,15}/', $twiter)){
+	exit('TwitterInvalido');
+}
