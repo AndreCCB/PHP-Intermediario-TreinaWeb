@@ -1,0 +1,10 @@
+<?php
+
+require_once 'cliente.php';
+
+$cli=new Cliente();
+$cli->nome='Ricardo';
+$cli->setEmail='Teste@teste';
+echo "<pre>";
+var_dump($cli);
+echo "</pre>";
