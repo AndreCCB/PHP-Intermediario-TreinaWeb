@@ -1,0 +1,23 @@
+<?php
+class Carro{
+	public $marca;
+	public $modelo;
+	public $qtdportas;
+	public $cor;
+	public $ano;
+}
+$i30= new Carro();
+$i30->marca = "Hyundai";
+$i30->modelo="I30";
+$i30->qtdportas=4;
+$i30->cor="cinza";
+$i30->ano=2019;
+echo "<pre>";
+var_dump($i30);
+echo "</pre><hr>";
+$palio = new Carro();
+$palio->marca="Fiet";
+$palio->ano=2000;
+echo "<pre>";
+var_dump($palio);
+echo "</pre>";
