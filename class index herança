@@ -1,0 +1,15 @@
+<?php
+
+class Pessoa{
+	public $codigo;
+	public $nome;
+    public $email;
+
+
+    public function exibe()
+    {
+    echo 'Codigo: '.$this->codigo."<br>";
+    echo 'None: '.$this->nome."<br>";
+    echo 'E-mail: '.$this->email."<br><hr>";
+    }
+}
