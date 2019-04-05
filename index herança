@@ -1,0 +1,24 @@
+<?php
+
+require 'Pessoa.php';
+require 'Cliente.php';
+require 'Fornecedor.php';
+
+$cli = new Cliente();
+$cli->codigo=12;
+$cli->nome='Ricardo';
+$cli->email='teste@teste.com';
+
+
+$cli->exibe();
+echo "<hr>";
+
+
+$fornec= new Fornecedor();
+$fornec->codigo=123;
+$fornec->nome='Microsoft';
+$fornec->email="teste@fornecedor.com";
+
+$fornec->exibe();
+
+?>
