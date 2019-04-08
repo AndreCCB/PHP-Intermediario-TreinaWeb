@@ -1,0 +1,59 @@
+<?php
+/*
+Instancie a  classe Calculadora com um valor
+chame a funcao desejada para fazer o calsulo
+calsuladora imprementada apartir do exemplo
+dado no curso PHP intermediario treinaWeb
+somente imprementei outras funçoes ja que nela
+so tinha a funçao dividir
+*/
+ 
+class Calculadora
+{
+    protected $valor;
+ 
+    public function __construct($valor)
+    {
+        $this->setValor($valor);
+    }
+ 
+ 
+    public function setValor($valor)
+    {
+        $this->valor=$valor;
+    }
+    public function getValor()
+    {
+        return number_format($this->valor,1);
+    }
+ 
+ 
+    public function dividir($div)
+    {
+        if($div===0){
+            throw new Exception('Não é e possível dividor por ZERO!');
+        }
+        $this->valor /= $por;
+    }
+    public function soma($som)
+    {
+        if($som===0){
+            throw new Exception('Não é possível somar por ZERO!');
+        }
+        $this->valor += $som;
+    }
+    public function subtrai($sub)
+    {
+        if($sub===0){
+            throw new Exception('Não é possível subtrair por ZERO!');
+        }
+        $this->valor -= $sub;
+    }
+    public function multiplica($mul)
+    {
+        if($mul===0){
+            throw new Exception('Não é possível multiplicar por ZERO!');
+        }
+        $this->valor *= $mul;
+    }
+}
