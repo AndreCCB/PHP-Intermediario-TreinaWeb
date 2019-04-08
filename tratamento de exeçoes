@@ -1,0 +1,43 @@
+<?php
+ 
+require 'Cliente.php';
+ 
+try{
+    $cli = new Cliente;
+ 
+    $cli->setNome('ca');
+ 
+    $cli->setEmail('Teste@teste.com');
+ 
+    var_dump($cli);
+ 
+}catch(Exception $ex){
+    echo "Logar erro: ".$ex->getMessage();
+}
+///classe cliente////
+ 
+<?php
+ 
+class Cliente
+{
+    protected $nome;
+    protected $email;
+ 
+    public function setNome($nome)
+    {
+        if(mb_strlen($nome,'utf8')< 3){
+            throw new Exception('Nome deve ter mais que 2 caractere');
+            ;
+        }
+        $this->nome=$nome;
+    }
+ 
+    public function setEmail($email)
+    {
+        if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
+            throw new Exception('Email invalido');
+           
+        }
+        $this->emial=$email;
+    }
+}
