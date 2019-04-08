@@ -1,0 +1,28 @@
+<?php
+//define a arcaçao do XML dentra de uma variavel
+//github: http://onisedeo.com/32lt
+$xml=<<<XML
+<?xml version="1.0" encoding="UTF-8"?>
+<treinaweb>
+    <aluno>
+        <nome>Thiago</nome>
+        <curso>PHP BASICO</curso>
+    </aluno>
+    <aluno>
+        <nome>Pedro</nome>
+        <curso>PHP Intermediario</curso>
+    </aluno>
+    <aluno>
+        <nome>Cristna</nome>
+        <curso>PHP Avançado</curso>
+    </aluno>
+</treinaweb>
+XML;
+//parceia a marcaçao XML
+$documento = simplexml_load_string($xml);
+//Impri,e o objeto resultante
+echo "<pre>";
+//var_dump($documento);
+//var_dump($documento->aluno);
+var_dump($documento->aluno[0]);
+var_dump($documento->aluno[2]->curso);
